@@ -1,6 +1,5 @@
 import argparse
 import scapy.all as scapy
-import argparse
 
 def get_args():
     parser = argparse.ArgumentParser()
