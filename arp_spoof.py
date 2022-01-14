@@ -1,7 +1,6 @@
 import scapy.all as scapy
 import time
 import argparse
-import subprocess
 
 def get_args():
     parser = argparse.ArgumentParser()
