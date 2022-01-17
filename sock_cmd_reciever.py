@@ -12,7 +12,7 @@ class Connect:
     def send(self, command):
         self.connection.send(command)
     def recieve(self):
-        return self.connection.recv(1024)
+        return self.connection.recv(2048
 
     def exec_cmd(command):
         return subprocess.check_output(command, shell=True)
