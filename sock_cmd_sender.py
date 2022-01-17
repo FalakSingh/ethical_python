@@ -14,7 +14,7 @@ class Listener:
 
     def snr(self, command):
         self.connection.send(command)
-        return self.connection.recv(1024)
+        return self.connection.recv(2048)
 
     def execute(self):
         while True:
